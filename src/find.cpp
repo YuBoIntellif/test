@@ -8,7 +8,6 @@
 #include <time.h>
 #include <xmmintrin.h>
 #include <immintrin.h>
-#include <kdtree.h>
 #include <mmintrin.h>
 #include <pthread.h>
 
