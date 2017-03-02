@@ -10,10 +10,10 @@ extern "C" {
 /*
  * Class:     JNIFind
  * Method:    create_search_pool
- * Signature: (II)J
+ * Signature: ([FII)J
  */
 JNIEXPORT jlong JNICALL Java_JNIFind_create_1search_1pool
-  (JNIEnv *, jobject, jint, jint);
+  (JNIEnv *, jobject, jfloatArray, jint, jint);
 
 /*
  * Class:     JNIFind
@@ -22,14 +22,6 @@ JNIEXPORT jlong JNICALL Java_JNIFind_create_1search_1pool
  */
 JNIEXPORT void JNICALL Java_JNIFind_destroy_1search_1pool
   (JNIEnv *, jobject, jlong);
-
-/*
- * Class:     JNIFind
- * Method:    add_one
- * Signature: (J[F)V
- */
-JNIEXPORT void JNICALL Java_JNIFind_add_1one
-  (JNIEnv *, jobject, jlong, jfloatArray);
 
 /*
  * Class:     JNIFind

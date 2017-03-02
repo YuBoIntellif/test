@@ -181,7 +181,7 @@ public:
 
 int find2(float *target, pool *p) {
     Foo foo(p->data, p->dimen, target, compare0);
-    tbb::task_scheduler_init tsi(4);
+    //tbb::task_scheduler_init tsi(4);
     parallel_reduce(blocked_range<size_t>(0, p->size),
                     foo, auto_partitioner());
     return foo.best_idx;
@@ -189,7 +189,7 @@ int find2(float *target, pool *p) {
 
 int find3(float *target, pool *p) {
     Foo foo(p->data, p->dimen, target, compare1);
-    tbb::task_scheduler_init tsi(4);
+    //tbb::task_scheduler_init tsi(4);
     parallel_reduce(blocked_range<size_t>(0, p->size),
                     foo, auto_partitioner());
     return foo.best_idx;

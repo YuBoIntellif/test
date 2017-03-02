@@ -1,6 +1,10 @@
 #ifndef __FIND_HPP__
 #define __FIND_HPP__
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct pool {
     float *data;
     int   dimen;
@@ -16,7 +20,8 @@ int find1(float *target, pool *p);
 int find2(float *target, pool *p);
 int find3(float *target, pool *p);
 
-int init(pool *p);
-int find4(float *target, pool *p);
+#ifdef __cplusplus
+}
+#endif
 
 #endif
