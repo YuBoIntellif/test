@@ -13,7 +13,8 @@ libJNIFind.so:JNIFind.cpp JNIFind.h
 Test.class:Test.java
 	javac Test.java
 
-.PHONY:testinit test10000 test50000 test100000 test1000000
+.PHONY:test testinit test10000 test50000 test100000 test1000000
+test: testinit test10000 test50000 test100000 test1000000
 testinit:
 	cp ../test/*.txt .
 
