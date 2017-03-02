@@ -4,7 +4,6 @@
 #define DIM_NUM 128     //特征向量的维数
 #define MAX     1000    //随机数的最大值
 #define DFT_NUM 1000    //默认的数据规模
-#define TEST_NUM 10000
 
 /**
  * 生成一个随机向量

@@ -20,9 +20,11 @@ public class Test {
 		}
 		
 		JNIFind jf = new JNIFind();
+		System.out.println("readdata...");
 		float[] data = readData(num);
 		long pool = jf.create_search_pool(data, DIM_NUM, num);
 		float[] target = genOne();
+		System.out.println("testing...");
 		long begin = new Date().getTime();
 		switch (alg) {
 		case 0:

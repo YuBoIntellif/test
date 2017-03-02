@@ -19,6 +19,8 @@
 
 #include "find.hpp"
 
+#define TEST_NUM 10000
+
 using namespace tbb;
 using namespace std;
 

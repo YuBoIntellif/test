@@ -18,17 +18,14 @@ int main(int argc, char *argv[]) {
     }
 
     //(2) read data
-    printf("now read data\n");
+    printf("readdata...\n");
     float *data = read_file(num);
-    printf("data %p", data);
     //(3) test
-    printf("now test\n");
+    printf("testing...\n");
     float target[DIM_NUM];
     int rdx = 0;
     struct timespec start;
     clock_gettime(CLOCK_REALTIME, &start);
-
-    printf("now create pool\n");
     pool *p = create_search_pool(data, DIM_NUM, num);
     for (int i = 0; i < TEST_NUM; i++) {
         gen_one(target);
@@ -47,11 +44,9 @@ int main(int argc, char *argv[]) {
     long accum = ( end.tv_sec - start.tv_sec ) * 1000
         + ( end.tv_nsec - start.tv_nsec ) / (1E6);
     printf("totaltime: %ldms \n"
-           "throughput: %fcps\n"
-           "rdx: %d\n",
+           "throughput: %fcps\n",
            accum,
-           (float)TEST_NUM / (float)(accum) * 1000,
-           rdx);
+           (float)TEST_NUM / (float)(accum) * 1000);
 
     return 0;
 }
