@@ -38,7 +38,8 @@ JNIEXPORT jint JNICALL Java_JNIFind_find_10
 (JNIEnv * env, jobject obj, jfloatArray array, jlong poolL) {
     pool *p = (pool*)poolL;
     jfloat *body = env->GetFloatArrayElements(array, 0);
-    return find0((float*)body, p);
+    float b;
+    return find0((float*)body, p, &b);
 }
 
 /*
@@ -50,7 +51,8 @@ JNIEXPORT jint JNICALL Java_JNIFind_find_11
 (JNIEnv * env, jobject obj, jfloatArray array, jlong poolL) {
     pool *p = (pool*)poolL;
     jfloat *body = env->GetFloatArrayElements(array, 0);
-    return find1((float*)body, p);
+    float b;
+    return find1((float*)body, p, &b);
 }
 
 /*
@@ -62,7 +64,8 @@ JNIEXPORT jint JNICALL Java_JNIFind_find_12
 (JNIEnv * env, jobject obj, jfloatArray array, jlong poolL) {
     pool *p = (pool*)poolL;
     jfloat *body = env->GetFloatArrayElements(array, 0);
-    return find2((float*)body, p);
+    float b;
+    return find2((float*)body, p, &b);
 }
 
 /*
@@ -74,7 +77,8 @@ JNIEXPORT jint JNICALL Java_JNIFind_find_13
 (JNIEnv * env, jobject obj, jfloatArray array, jlong poolL) {
     pool *p = (pool*)poolL;
     jfloat *body = env->GetFloatArrayElements(array, 0);
-    return find3((float*)body, p);
+    float b;
+    return find3((float*)body, p, &b);
 }
 
 #ifdef __cplusplus

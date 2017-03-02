@@ -9,6 +9,7 @@ find:find.cpp base.cpp
 	g++ -O3 -o find_1 $^ -lfind -lm -lrt -ltbb -msse -mavx -DALG=1
 	g++ -O3 -o find_2 $^ -lfind -lm -lrt -ltbb -msse -mavx -DALG=2
 	g++ -O3 -o find_3 $^ -lfind -lm -lrt -ltbb -msse -mavx -DALG=3
+	g++ -O3 -o find_check $^ -lfind -lm -lrt -ltbb -msse -mavx -DALG=4
 
 .PHONE:test testinit test10000 test50000 test100000 test1000000
 test:testinit test10000 test50000 test100000 test1000000

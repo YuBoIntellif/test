@@ -108,7 +108,7 @@ void destroy_search_pool(pool* p) {
     free(p);
 }
 
-int find0(float *target, pool *p) {
+int find0(float *target, pool *p, float *d) {
     float best = -1.0F;
     int idx = 0;
 
@@ -120,10 +120,11 @@ int find0(float *target, pool *p) {
         }
     }
 
+    *d = best;
     return idx;
 }
 
-int find1(float *target, pool *p) {
+int find1(float *target, pool *p, float *d) {
     float best = -1.0F;
     float dis;
     int idx = 0;
@@ -136,6 +137,7 @@ int find1(float *target, pool *p) {
         }
     }
 
+    *d = best;
     return idx;
 }
 
@@ -181,18 +183,20 @@ public:
     }
 };
 
-int find2(float *target, pool *p) {
+int find2(float *target, pool *p, float *d) {
     Foo foo(p->data, p->dimen, target, compare0);
     //tbb::task_scheduler_init tsi(4);
     parallel_reduce(blocked_range<size_t>(0, p->size),
                     foo, auto_partitioner());
+    *d = foo.best_val;
     return foo.best_idx;
 }
 
-int find3(float *target, pool *p) {
+int find3(float *target, pool *p, float *d) {
     Foo foo(p->data, p->dimen, target, compare1);
     //tbb::task_scheduler_init tsi(4);
     parallel_reduce(blocked_range<size_t>(0, p->size),
                     foo, auto_partitioner());
+    *d = foo.best_val;
     return foo.best_idx;
 }
