@@ -9,6 +9,8 @@
 
 #include "base.hpp"
 
+#define TEST_NUM 10000
+
 int main(int argc, char *argv[]) {
     int num = DFT_NUM;
     
